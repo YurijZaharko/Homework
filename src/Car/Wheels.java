@@ -31,7 +31,7 @@ public class Wheels {
     }
 
     public void pumpWheels(){
-        System.out.println("Pump Wheels");
+        System.out.println("Pumping Wheels");
     }
 
 

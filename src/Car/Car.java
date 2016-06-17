@@ -34,6 +34,8 @@ public class Car {
     public void changeWheels(Wheels newWheels){
         removeAllWeels();
         add(newWheels);
+        System.out.println("Changing and pumping");
+        pumpWheels();
     }
 
     @Override

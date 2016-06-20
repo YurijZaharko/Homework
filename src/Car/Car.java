@@ -7,10 +7,10 @@ public class Car {
     private Body body;
     private Wheels wheels;
     private Handlebar handlebar;
-    private final String name;
-    private String color;
+    private final Mark name;
+    private Color color;
 
-    public Car(String color, Body body, Handlebar handlebar, String name) {
+    public Car(Color color, Body body, Handlebar handlebar, Mark name) {
         this.color = color;
         this.body = body;
         this.wheels = getWheel();
@@ -19,15 +19,15 @@ public class Car {
     }
 
 
-    public String getName() {
+    public Mark getName() {
         return name;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -73,7 +73,7 @@ public class Car {
         return body.size();
     }
 
-    public double getSize() {
+    public Wheel getSize() {
         return wheels.getSize();
     }
 

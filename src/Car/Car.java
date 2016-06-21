@@ -23,7 +23,7 @@ public class Car {
         return name;
     }
 
-    public Color getColor() {
+    public Color getColorOfCar() {
         return color;
     }
 
@@ -73,8 +73,12 @@ public class Car {
         return body.size();
     }
 
-    public Wheel getSize() {
+    public int getSizeOfWheels() {
         return wheels.getSize();
+    }
+
+    public void setSizeOfWheels(int size) {
+        wheels.setSize(size);
     }
 
     public boolean isSummerRubber() {
@@ -95,5 +99,13 @@ public class Car {
 
     public void turnRight() {
         handlebar.turnRight();
+    }
+
+    public void setHandlebar(Handlebar handlebar) {
+        this.handlebar = handlebar;
+    }
+
+    public boolean isButtonInHandlebar() {
+        return handlebar.isButton();
     }
 }

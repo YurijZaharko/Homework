@@ -5,11 +5,11 @@ package Car;
  * Created by SCIP on 16.06.2016.
  */
 public class Wheels {
-    private final Wheel size;
+    private int size;
     private final boolean isSummerRubber;
 
 
-    public Wheels(Wheel size, boolean isSummerRubber) {
+    public Wheels(int size, boolean isSummerRubber) {
         this.size = size;
         this.isSummerRubber = isSummerRubber;
     }
@@ -22,8 +22,12 @@ public class Wheels {
                 '}';
     }
 
-    public Wheel getSize() {
+    public int getSize() {
         return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 
     public boolean isSummerRubber() {
@@ -33,7 +37,5 @@ public class Wheels {
     public void pumpWheels(){
         System.out.println("Pumping Wheels");
     }
-
-
 
 }

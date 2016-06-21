@@ -9,12 +9,12 @@ import java.util.List;
  */
 public class Body {
     private boolean openTrunk = false;
-    private final String typeOfBody;
+    TypeOfBody typeOfBody;
     private int numberOfWheel;
     ArrayList<Wheels> wheelsList = new ArrayList<>();
 
 
-    public Body(int numberOfWheel, Wheels wheel,String typeOfBody) {
+    public Body(int numberOfWheel, Wheels wheel,TypeOfBody typeOfBody) {
         this.typeOfBody = typeOfBody;
         this.numberOfWheel = numberOfWheel;
         wheelsList.add(wheel);
@@ -68,4 +68,6 @@ public class Body {
                 ", wheelsList=" + wheelsList +
                 '}';
     }
+
+
 }

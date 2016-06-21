@@ -4,15 +4,17 @@ package Car;
  * Created by SCIP on 16.06.2016.
  */
 public class Handlebar {
-    private final String color;
+    Color color;
     private final String materialOFHandlebar;
+    private final boolean button;
 
-    public Handlebar(String color, String materialOFHandlebar) {
+    public Handlebar(Color color, String materialOFHandlebar, boolean button) {
         this.color = color;
         this.materialOFHandlebar = materialOFHandlebar;
+        this.button = button;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
@@ -34,5 +36,9 @@ public class Handlebar {
 
     public void turnRight(){
         System.out.println("Turn right");
+    }
+
+    public boolean isButton() {
+        return button;
     }
 }

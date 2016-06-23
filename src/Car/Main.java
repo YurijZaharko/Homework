@@ -36,5 +36,6 @@ public class Main {
         service.removeCarIfBodyAndWheels(service.readString(scanner, "Please enter color of body"), service.readInt(scanner,
                 "Please enter diameter of wheels from: "), service.readInt(scanner, "Please enter diameter of wheels to: "));
         service.getIndexIfBody(service.readString(scanner, "Please enter color of body"));
+        scanner.close();
     }
 }

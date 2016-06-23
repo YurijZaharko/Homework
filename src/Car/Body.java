@@ -9,9 +9,9 @@ import java.util.List;
  */
 public class Body {
     private boolean openTrunk = false;
-    TypeOfBody typeOfBody;
+    private TypeOfBody typeOfBody;
     private int numberOfWheel;
-    ArrayList<Wheels> wheelsList = new ArrayList<>();
+    private ArrayList<Wheels> wheelsList = new ArrayList<>();
 
 
     public Body(int numberOfWheel, Wheels wheel,TypeOfBody typeOfBody) {
@@ -69,5 +69,7 @@ public class Body {
                 '}';
     }
 
-
+    public TypeOfBody getTypeOfBody() {
+        return typeOfBody;
+    }
 }

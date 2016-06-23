@@ -6,7 +6,7 @@ package Car;
  */
 public class Wheels {
     private int size;
-    private final boolean isSummerRubber;
+    private  boolean isSummerRubber;
 
 
     public Wheels(int size, boolean isSummerRubber) {
@@ -38,4 +38,7 @@ public class Wheels {
         System.out.println("Pumping Wheels");
     }
 
+    public void setSummerRubber(boolean summerRubber) {
+        isSummerRubber = summerRubber;
+    }
 }

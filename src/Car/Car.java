@@ -108,4 +108,12 @@ public class Car {
     public boolean isButtonInHandlebar() {
         return handlebar.isButton();
     }
+
+    public TypeOfBody getTypeOfBody() {
+        return body.getTypeOfBody();
+    }
+
+    public void setSummerRubber(boolean summerRubber) {
+        wheels.setSummerRubber(summerRubber);
+    }
 }

@@ -116,4 +116,8 @@ public class Car {
     public void setSummerRubber(boolean summerRubber) {
         wheels.setSummerRubber(summerRubber);
     }
+
+    public Handlebar getHandlebar() {
+        return handlebar;
+    }
 }

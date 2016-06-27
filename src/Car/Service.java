@@ -48,28 +48,41 @@ public class Service {
         addCarToList(car4);
     }
 
-    void findCar(int wheel){
+    ArrayList<Car> findCar(int wheel){
+        ArrayList<Car> temp = new ArrayList<Car>();
         for (Car car: carList) {
             if (car.getSizeOfWheels() == wheel){
+                temp.add(car);
                 System.out.println("Car with wheels " + wheel + " is: ");
                 System.out.println(car);
+
             }
         }
         System.out.println();
+        if (temp.isEmpty()){
+            return null;
+        }
+        return temp;
     }
 
-    void findCar(int wheel, String col){
+    ArrayList<Car> findCar(int wheel, String col){
         Color color = Color.valueOf(col);
+        ArrayList<Car> temp = new ArrayList<Car>();
         for (Car car: carList) {
             if (car.getSizeOfWheels() == wheel&& car.getColorOfCar().equals(color)){
+                temp.add(car);
                 System.out.println("Car with wheels " + wheel + " and color " + color + " is: ");
                 System.out.println(car);
             }
         }
         System.out.println();
+        if (temp.isEmpty()){
+            return null;
+        }
+        return temp;
     }
 
-    public void changeInRedCars(Handlebar handlebar) {
+    void changeInRedCars(Handlebar handlebar) {
         for (Car car: carList) {
             if (car.getColorOfCar().equals(Color.RED)){
                 car.setHandlebar(handlebar);
@@ -118,16 +131,22 @@ public class Service {
 
     }
 
-    public void findCar(String readString) {
+    ArrayList<Car> findCar(String readString) {
+        ArrayList<Car> tempList = new ArrayList<Car>();
         TypeOfBody typeOfBody = TypeOfBody.valueOf(readString);
         Iterator<Car> iterator = carList.iterator();
         while (iterator.hasNext()){
             Car temp = iterator.next();
             if (temp.getTypeOfBody().equals(typeOfBody)){
+                tempList.add(temp);
                 System.out.println("Such car has type of body " + typeOfBody);
                 System.out.println(temp);
             }
         }
+        if(tempList.isEmpty()){
+            return null;
+        }
+        return tempList;
     }
 
     public void removeCarIfColor(String readString) {
@@ -169,10 +188,11 @@ public class Service {
         System.out.println();
     }
 
-    public void getIndexIfBody(String readString) {
-        List<Integer> carIndex = new ArrayList<>();
+    ArrayList<Integer> getIndexIfBody(String readString) {
+        ArrayList<Integer> carIndex = new ArrayList<>();
         TypeOfBody typeOfBody = TypeOfBody.valueOf(readString);
         ListIterator<Car> iterator = carList.listIterator();
+
         while (iterator.hasNext()){
             Car temp = iterator.next();
             if (temp.getTypeOfBody().equals(typeOfBody)){
@@ -182,5 +202,9 @@ public class Service {
             }
         }
         System.out.println(carIndex);
+        if(carIndex.isEmpty()){
+            return null;
+        }
+        return carIndex;
     }
 }

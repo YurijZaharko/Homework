@@ -1,5 +1,7 @@
 package Car;
 
+import java.util.Objects;
+
 /**
  * Created by SCIP on 16.06.2016.
  */
@@ -14,12 +16,25 @@ public class Handlebar {
         this.button = button;
     }
 
-    public Color getColor() {
-        return color;
-    }
+
 
     public String getMaterialOFHandlebar() {
         return materialOFHandlebar;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Handlebar)) return false;
+        Handlebar handlebar = (Handlebar) o;
+        return button == handlebar.button &&
+                color == handlebar.color &&
+                Objects.equals(materialOFHandlebar, handlebar.materialOFHandlebar);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, materialOFHandlebar, button);
     }
 
     @Override
@@ -28,6 +43,10 @@ public class Handlebar {
                 "color='" + color + '\'' +
                 ", materialOFHandlebar='" + materialOFHandlebar + '\'' +
                 '}';
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     public void turnLeft(){

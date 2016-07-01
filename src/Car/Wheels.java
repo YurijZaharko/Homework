@@ -1,6 +1,8 @@
 package Car;
 
 
+import java.util.Objects;
+
 /**
  * Created by SCIP on 16.06.2016.
  */
@@ -12,6 +14,20 @@ public class Wheels {
     public Wheels(int size, boolean isSummerRubber) {
         this.size = size;
         this.isSummerRubber = isSummerRubber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Wheels)) return false;
+        Wheels wheels = (Wheels) o;
+        return size == wheels.size &&
+                isSummerRubber == wheels.isSummerRubber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(size, isSummerRubber);
     }
 
     @Override

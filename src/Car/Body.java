@@ -3,6 +3,7 @@ package Car;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by SCIP on 16.06.2016.
@@ -18,6 +19,32 @@ public class Body {
         this.typeOfBody = typeOfBody;
         this.numberOfWheel = numberOfWheel;
         wheelsList.add(wheel);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Body)) return false;
+        Body body = (Body) o;
+        return openTrunk == body.openTrunk &&
+                numberOfWheel == body.numberOfWheel &&
+                typeOfBody == body.typeOfBody &&
+                Objects.equals(wheelsList, body.wheelsList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(openTrunk, typeOfBody, numberOfWheel, wheelsList);
+    }
+
+    @Override
+    public String toString() {
+        return "Body{" +
+                "openTrunk=" + openTrunk +
+                ", typeOfBody='" + typeOfBody + '\'' +
+                ", numberOfWheel=" + numberOfWheel +
+                ", wheelsList=" + wheelsList +
+                '}';
     }
 
     public void setOpenTrunk() {
@@ -59,15 +86,7 @@ public class Body {
         return null;
     }
 
-    @Override
-    public String toString() {
-        return "Body{" +
-                "openTrunk=" + openTrunk +
-                ", typeOfBody='" + typeOfBody + '\'' +
-                ", numberOfWheel=" + numberOfWheel +
-                ", wheelsList=" + wheelsList +
-                '}';
-    }
+
 
     public TypeOfBody getTypeOfBody() {
         return typeOfBody;

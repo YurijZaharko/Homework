@@ -1,5 +1,7 @@
 package Car;
 
+import java.util.Objects;
+
 /**
  * Created by SCIP on 16.06.2016.
  */
@@ -18,6 +20,33 @@ public class Car {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
+        return Objects.equals(body, car.body) &&
+                Objects.equals(wheels, car.wheels) &&
+                Objects.equals(handlebar, car.handlebar) &&
+                name == car.name &&
+                color == car.color;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(body, wheels, handlebar, name, color);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "body=" + body +
+                ", wheels=" + wheels +
+                ", handlebar=" + handlebar +
+                ", name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 
     public Mark getName() {
         return name;
@@ -38,16 +67,7 @@ public class Car {
         pumpWheels();
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "body=" + body +
-                ", wheels=" + wheels +
-                ", handlebar=" + handlebar +
-                ", name='" + name + '\'' +
-                ", color='" + color + '\'' +
-                '}';
-    }
+
 
     public Wheels getWheel() {
         return body.getWheel();

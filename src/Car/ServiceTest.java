@@ -1,8 +1,9 @@
 package Car;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import org.junit.Test;
+
+import java.util.*;
+import java.util.stream.Collector;
 
 import static org.junit.Assert.*;
 
@@ -326,6 +327,73 @@ public class ServiceTest {
         carList2.add(car4);
         Service service2 = new Service(carList2);
         assertNull(service2.getIndexIfBody("TRUCK"));
+    }
+
+    @Test
+    public void changeWheelsInSet() throws Exception {
+        Handlebar handlebar3 = new Handlebar(Color.BLUE, "Steel", false);
+        Wheels wheels3 = new Wheels(18, false);
+        Body body3 = new Body(4,wheels3, TypeOfBody.CAR);
+        Car car3 = new Car(Color.BLACK, body3, handlebar3, Mark.HONDA);
+
+        Handlebar handlebar4 = new Handlebar(Color.BLUE, "Steel", false);
+        Wheels wheels4 = new Wheels(15, false);
+        Body body4 = new Body(4,wheels4, TypeOfBody.TRUCK);
+        Car car4 = new Car(Color.GREEN, body4, handlebar4, Mark.HONDA);
+        Set<Car> carSet = new  LinkedHashSet<>();
+        carSet.add(car3);
+        carSet.add(car4);
+
+        Service service = new Service(carSet);
+        service.changeWheelsInSet("CAR", 18, "True");
+        boolean expected = true;
+        boolean actual = car3.isSummerRubber();
+        assertEquals(expected, actual);
+        assertEquals(false, car4.isSummerRubber());
+    }
+
+    @Test
+    public void removeCarIfWheelSet() throws Exception {
+        Handlebar handlebar3 = new Handlebar(Color.BLUE, "Steel", false);
+        Wheels wheels3 = new Wheels(18, false);
+        Body body3 = new Body(4,wheels3, TypeOfBody.CAR);
+        Car car3 = new Car(Color.BLACK, body3, handlebar3, Mark.HONDA);
+
+        Handlebar handlebar4 = new Handlebar(Color.BLUE, "Steel", false);
+        Wheels wheels4 = new Wheels(15, false);
+        Body body4 = new Body(4,wheels4, TypeOfBody.TRUCK);
+        Car car4 = new Car(Color.GREEN, body4, handlebar4, Mark.HONDA);
+        Set<Car> carSet = new  LinkedHashSet<>();
+        carSet.add(car3);
+        carSet.add(car4);
+        Service service = new Service(carSet);
+
+        service.removeCarIfWheelSet(14, 16);
+        assertEquals(1, carSet.size());
+        assertTrue(carSet.contains(car3));
+        assertFalse(carSet.contains(car4));
+    }
+
+    @Test
+    public void findByWheelsSet() throws Exception {
+        Handlebar handlebar3 = new Handlebar(Color.BLUE, "Steel", false);
+        Wheels wheels3 = new Wheels(18, false);
+        Body body3 = new Body(4,wheels3, TypeOfBody.CAR);
+        Car car3 = new Car(Color.BLACK, body3, handlebar3, Mark.HONDA);
+
+        Handlebar handlebar4 = new Handlebar(Color.BLUE, "Steel", false);
+        Wheels wheels4 = new Wheels(15, true);
+        Body body4 = new Body(4,wheels4, TypeOfBody.TRUCK);
+        Car car4 = new Car(Color.GREEN, body4, handlebar4, Mark.HONDA);
+        Set<Car> carSet = new  LinkedHashSet<>();
+        carSet.add(car3);
+        carSet.add(car4);
+        Service service = new Service(carSet);
+
+        LinkedHashSet<Car> actual = service.findByWheelsSet("false", 17, 19);
+        LinkedHashSet<Car> expected = new  LinkedHashSet<Car>();
+        expected.add(car3);
+        assertEquals(actual, expected);
     }
 
 }

@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 /**
  * Created by SCIP on 26.06.2016.
  */
-public class ServiceTest {
+public class ServiceCommodityTest {
 
     @org.junit.Test
     public void updateListOfCar() throws Exception {

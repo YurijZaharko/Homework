@@ -1,5 +1,7 @@
 package Com;
 
+import Com.Comporators.*;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import java.util.List;
  * Created by SCIP on 13.07.2016.
  */
 public class ServiceCommodity {
+
     void addToList(List<Commodity> commodityList, Commodity commodity){
         commodityList.add(commodity);
     }
@@ -68,10 +71,40 @@ public class ServiceCommodity {
     }
 
     void findRemoveAndSet(List<Commodity> commodityList, Commodity find, Commodity set){
-        commodityList.set(commodityList.indexOf(find), set);
+        int i = commodityList.indexOf(find);
+        commodityList.set(i, set);
 
     }
 
+    public void sortByNameAsc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByNameAsc());
+    }
 
+    public void sortByNameDesc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByNameDesc());
+    }
+
+    public void sortByPriceAsc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByPriceAsc());
+    }
+
+    public void sortByPriceDesc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByPriceDesc());
+    }
+
+    public void sortByVolumeAsc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByVolumeAsc());
+    }
+    public void sortByVolumeDesc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByVolumeDesc());
+    }
+
+    public void sortByWeightAsc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByWeightAsc());
+    }
+
+    public void sortByWeightDesc(List<Commodity> commodityList){
+        commodityList.sort(new CommodityComparatorByWeightDesc());
+    }
 
 }

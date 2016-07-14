@@ -6,7 +6,7 @@ package Com;
 public class Menu {
     private Scan scan = new Scan();
     ServiceCommodity serviceCommodity = new ServiceCommodity();
-    private void print(String massage){
+    public void print(String massage){
         System.out.println(massage);
     }
 
@@ -48,9 +48,9 @@ public class Menu {
     int field(){
         print("Sort by:");
         print("1. Name");
-        print("3. Price");
-        print("4. Weight");
-        print("5. Volume");
+        print("2. Price");
+        print("3. Weight");
+        print("4. Volume");
         return scan.readInt("Choose number");
     }
 

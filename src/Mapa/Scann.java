@@ -1,11 +1,11 @@
-package Com;
+package Mapa;
 
 import java.util.Scanner;
 
 /**
  * Created by SCIP on 13.07.2016.
  */
-public class Scan {
+public class Scann {
     Scanner scanner = new Scanner(System.in);
 
     String readString(String text) {
@@ -13,7 +13,7 @@ public class Scan {
         return scanner.next();
     }
 
-    public int readInt(String text) {
+    int readInt(String text) {
         System.out.println(text);
         if (scanner.hasNextInt()) {
             return scanner.nextInt();

@@ -6,7 +6,7 @@ package Com;
 public class Menu {
     private Scan scan = new Scan();
     ServiceCommodity serviceCommodity = new ServiceCommodity();
-    public void print(String massage){
+    private void print(String massage){
         System.out.println(massage);
     }
 

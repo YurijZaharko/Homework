@@ -8,6 +8,14 @@ import java.util.*;
 public class Zooclub {
     private Map<Person, List<Pet>> map = new HashMap<>();
 
+    public Map<Person, List<Pet>> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<Person, List<Pet>> map) {
+        this.map = map;
+    }
+
     public void addPerson(String name, int age){
         map.put(new Person(name, age), new ArrayList<>());
     }

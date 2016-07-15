@@ -1,12 +1,22 @@
 package Mapa;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Created by SCIP on 14.07.2016.
  */
-public class Zooclub {
+public class Zooclub implements Serializable{
+
+    private static final long serialVersionUID = -8596743156091118984L;
     private Map<Person, List<Pet>> map = new HashMap<>();
+
+    @Override
+    public String toString() {
+        return "Zooclub{" +
+                "map=" + map +
+                '}';
+    }
 
     public Map<Person, List<Pet>> getMap() {
         return map;

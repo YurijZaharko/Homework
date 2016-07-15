@@ -8,7 +8,23 @@ public class Main {
         Zooclub zooclub = new Zooclub();
         Menu menu = new Menu();
         Scann scan = new Scann();
+        Saver saver = new Saver();
+        Tools tools = new Tools("importExpor.txt");
         boolean isRun = true;
+
+        saver.addToFile("File.txt", "test22324444444gggg");
+        saver.writeInFile("File.txt", "test222");
+        saver.readFromFile("File.txt");
+
+        String name = "Petro";
+        int age = 20;
+        zooclub.addPerson(name, age);
+
+        tools.exportObject(zooclub);
+        System.out.println(zooclub);
+        System.out.println(tools.importObject());
+        zooclub.getMap().clear();
+
 
         while(isRun){
             switch (menu.mainMenu()){

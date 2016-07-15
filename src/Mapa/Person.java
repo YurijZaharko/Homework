@@ -1,11 +1,12 @@
 package Mapa;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Created by SCIP on 14.07.2016.
  */
-public class Person {
+public class Person implements Serializable{
     private final String name;
     private final int age;
 

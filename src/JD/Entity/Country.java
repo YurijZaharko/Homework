@@ -5,10 +5,10 @@ package JD.Entity;
  */
 public class Country {
     private int id;
-    private String country;
+    private String name;
 
-    public Country(String country) {
-        this.country = country;
+    public Country(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -19,19 +19,19 @@ public class Country {
         this.id = id;
     }
 
-    public String getCountry() {
-        return country;
+    public String getName() {
+        return name;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Country{" +
                 "id=" + id +
-                ", country='" + country + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

@@ -3,14 +3,14 @@ package JD.Entity;
 /**
  * Created by SCIP on 24.07.2016.
  */
-public class Barnd {
+public class Brand {
     private int id;
     private String name;
-    private int idCountry;
 
-    public Barnd(String name, int idCountry) {
+
+    public Brand(String name) {
         this.name = name;
-        this.idCountry = idCountry;
+
     }
 
     public int getId() {
@@ -29,20 +29,11 @@ public class Barnd {
         this.name = name;
     }
 
-    public int getIdCountry() {
-        return idCountry;
-    }
-
-    public void setIdCountry(int idCountry) {
-        this.idCountry = idCountry;
-    }
-
     @Override
     public String toString() {
-        return "Barnd{" +
+        return "Brand{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", idCountry=" + idCountry +
                 '}';
     }
 }

@@ -1,32 +1,26 @@
 package JD.Entity;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 /**
  * Created by SCIP on 24.07.2016.
  */
 public class Product {
-    private int id;
     private int idCategory;
-    private BigInteger price;
+    private BigDecimal price;
     private String name;
     private String partNumber;
     private int idBrand;
+    private int idCountry;
 
-    public Product(int idCategory, BigInteger price, String name, String partNumber, int idBrand) {
+    public Product(int idCategory, BigDecimal price, String name, String partNumber, int idBrand, int idCountry) {
         this.idCategory = idCategory;
         this.price = price;
         this.name = name;
         this.partNumber = partNumber;
         this.idBrand = idBrand;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.idCountry = idCountry;
     }
 
     public int getIdCategory() {
@@ -37,11 +31,11 @@ public class Product {
         this.idCategory = idCategory;
     }
 
-    public BigInteger getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -69,15 +63,23 @@ public class Product {
         this.idBrand = idBrand;
     }
 
+    public int getIdCountry() {
+        return idCountry;
+    }
+
+    public void setIdCountry(int idCountry) {
+        this.idCountry = idCountry;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
                 ", idCategory=" + idCategory +
                 ", price=" + price +
                 ", name='" + name + '\'' +
                 ", partNumber='" + partNumber + '\'' +
                 ", idBrand=" + idBrand +
+                ", idCountry=" + idCountry +
                 '}';
     }
 }
